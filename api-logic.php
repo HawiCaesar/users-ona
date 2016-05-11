@@ -2,7 +2,7 @@
 
 //connect to database and fetch data
 
-$mysqli = new mysqli("localhost", "root", "toor1", "ona");
+$mysqli = new mysqli("localhost", "root", "root", "ona");
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Map Breakdown</title>
+</head>
+<body>
+	<div id="container" style="height: 500px; min-width: 310px; max-width: 880px; margin: 0 auto"></div>
+</body>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<!-- <script src="ke-all.js"></script> -->
+	<script>
+		 $(function () {
+	    // Initiate the chart
+	    
+
+		    //$(function () {
+		    	$.getJSON('pie-api-logic.php', function (data) {
+
+		    		$('#container').highcharts({
+									        chart: {
+									            plotBackgroundColor: null,
+									            plotBorderWidth: 0,//null,
+									            plotShadow: false
+									        },
+									        title: {
+									            text: 'Total Users V Users without First Names'
+									        },
+									        // subtitle: {
+							          //           text: '<?php echo $date_filter_desc;?>',
+							          //           x: -10
+							          //       },
+									        tooltip: {
+									            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+									        },
+									         credits: {
+							                    enabled: false
+							                },
+									        plotOptions: {
+									            pie: {
+									                allowPointSelect: true,
+									                cursor: 'pointer',
+									                dataLabels: {
+									                    enabled: true,
+									                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+									                    style: {
+									                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+									                    }
+									                }
+									            }
+									        },
+									        series:	data
+									    });
+									});
+									    
+
+
+	    });
+	</script>
+</html>

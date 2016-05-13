@@ -4,7 +4,9 @@
 	<title>Simple Dashboard</title>
 </head>
 <body>
-	<div id="container" style="height: 500px; min-width: 310px; max-width: 880px; margin: 0 auto"></div>
+	<div id="container" style="height: 500px; min-width: 310px; max-width: 880px; margin: 0 auto">
+		<img style="margin-top: 20%;margin-left: 40%" src="loading.gif">
+	</div>
 </body>
 	<script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
 	<script src="http://code.highcharts.com/maps/highmaps.js"></script>
@@ -13,13 +15,13 @@
 	<script>
 		 $(function () {
 	    // Initiate the chart
-	    $.getJSON('map2-data.php', function (data) {
+	    $.getJSON('map-api-logic.php', function (data) {
 
 		    $('#container').highcharts('Map', {
 		    			credits: { enabled: false },
 		    			legend: { enabled: true },
 		    			mapNavigation: { enabled: true },
-		    			title: { text : 'Kenyan Counties' },
+		    			title: { text : 'Ona Users without First Names' },
 		    			plotOptions: {
 		            		map: {
 		            				mapData: Highcharts.maps['countries/ke-all'],
@@ -32,7 +34,7 @@
 						            },
 						            tooltip: {
 						                headerFormat: '<span style="font-size:15px;">County Breakdown</span><br />',
-						                pointFormat: '{point.name} <br />Device Percentage {series.name}<br />Total Things<br />{point.value}'
+						                pointFormat: '{point.name} <br />Category {series.name}<br />Number:<br />{point.value}'
 						            }
 		            		}
 		            	},

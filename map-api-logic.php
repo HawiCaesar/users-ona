@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli("localhost", "root", "toor1", "ona");
+$mysqli = new mysqli("localhost", "username", "password", "database");
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
@@ -55,7 +55,7 @@ $data4047 = array();
 
 foreach ($rows as $row) {
 	$map_data = $total_without_first_name-$row['value'];
-	
+
 	if($map_data>=5000){
 		$data110[]= array('value'=>$map_data,'code'=>$row['c_code']);
 	}elseif($map_data<=4999 && $map_data>=4500){
